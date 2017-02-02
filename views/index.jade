@@ -1,0 +1,12 @@
+extends layout
+
+block content
+	p Submit a file to view its filesize.
+	form(action='/get-file-size',method='post', enctype="multipart/form-data")
+		input(type="file", name="file")
+		input(type="submit")
+
+	if size 
+		h4 File Size: 
+			strong=size
+
